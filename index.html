@@ -11,54 +11,50 @@
     <header>Password Generator</header>
     <div class="container">
       <div class="child">
-        <div class="flexing" >
-          <input placeholder="Password will appear here " id="password" class="output"/>
+        <div class="flexing">
+          <input
+            placeholder="Password will appear here "
+            id="password"
+            class="output"
+          />
           <button id="copy">copy</button>
         </div>
-          <div class="flexing">
-            <label for="length">Length of the Password </label>
-            <input type='number' id="length" min="4" max="30" />
-          </div>
-          <div class="flexing">
-            <label for="lowercase">Contains Lowercase</label>
-            <input
-              type="checkbox"
-              id="lowercase"
-              name="lowercase"
-              value="lowercase"
-            />
-          </div>
-          <div class="flexing">
-            <label for="uppercase">Contains Uppercase</label>
-            <input
-              type="checkbox"
-              id="uppercase"
-              name="uppercase"
-              value="uppercase"
-            />
-          </div>
-          <div class="flexing">
-            <label for="numbers">Contains Numbers</label>
-            <input
-              type="checkbox"
-              id="numbers"
-              name="numbers"
-              value="numbers"
-            />
-          </div>
-          <div class="flexing">
-            <label for="special">Contains Special Character</label>
-            <input
-              type="checkbox"
-              id="special"
-              name="special"
-              value="special"
-            />
-          </div>
-        <button id="generate" >GENERATE PASSWORD</button>
+        <div class="flexing">
+          <label for="length">Length of the Password </label>
+          <input type="number" id="length" min="4" max="30" />
+        </div>
+        <div class="flexing">
+          <label for="lowercase">Contains Lowercase</label>
+          <input
+            type="checkbox"
+            id="lowercase"
+            name="lowercase"
+            value="lowercase"
+          />
+        </div>
+        <div class="flexing">
+          <label for="uppercase">Contains Uppercase</label>
+          <input
+            type="checkbox"
+            id="uppercase"
+            name="uppercase"
+            value="uppercase"
+          />
+        </div>
+        <div class="flexing">
+          <label for="numbers">Contains Numbers</label>
+          <input type="checkbox" id="numbers" name="numbers" value="numbers" />
+        </div>
+        <div class="flexing">
+          <label for="special">Contains Special Character</label>
+          <input type="checkbox" id="special" name="special" value="special" />
+        </div>
+        <button id="generate">GENERATE PASSWORD</button>
+      </div>
+      <div class="message-container">
+        <div id="message"></div>
       </div>
     </div>
-    <div id="message"></div>
     <script src="PasswordGenerator.js"></script>
   </body>
 </html>

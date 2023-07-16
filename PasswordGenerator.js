@@ -2,17 +2,23 @@ const lowercase = "abcdefghijklmnopqrstuvwxyz";
 const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numbers = "0123456789";
 const special = `-~!@#$%^&*()_{}[].,/+<>=|?'"`;
+const Shuffle = (password) => {
+  var arr = password.split("");
+  arr.sort(() => {
+    return 0.5 - Math.random();
+  });
+  password = arr.join("");
+  return password;
+};
 
 const createPassword = () => {
   let password = "";
   let length = parseInt(document.getElementById("length").value);
-  console.log(length);
   if (length < 4) {
     alert("Length should be greater than or equal to four.");
     return;
   }
   const arr = [];
-  const brr = [0, 0, 0, 0];
   if (document.getElementById("lowercase").checked) arr.push(0);
   if (document.getElementById("uppercase").checked) arr.push(1);
   if (document.getElementById("numbers").checked) arr.push(2);
@@ -20,27 +26,38 @@ const createPassword = () => {
   if (arr.length === 0) {
     alert(`You didn't checked the password requirement.`);
   }
-  console.log(arr.length);
-  while (password.length < length) {
+  while (password.length < length - arr.length) {
     let a = arr[Math.floor(Math.random() * arr.length)];
     if (a === 0) {
-      brr[0]++;
       let b = Math.floor(Math.random() * lowercase.length);
       password += lowercase[b];
     } else if (a === 1) {
       let b = Math.floor(Math.random() * uppercase.length);
-      brr[1]++;
       password += uppercase[b];
     } else if (a === 2) {
       let b = Math.floor(Math.random() * numbers.length);
-      brr[2]++;
       password += numbers[b];
     } else {
       let b = Math.floor(Math.random() * special.length);
-      brr[3]++;
       password += special[b];
     }
   }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 0) {
+      let b = Math.floor(Math.random() * lowercase.length);
+      password += lowercase[b];
+    } else if (arr[i] === 1) {
+      let b = Math.floor(Math.random() * uppercase.length);
+      password += uppercase[b];
+    } else if (arr[i] === 2) {
+      let b = Math.floor(Math.random() * numbers.length);
+      password += numbers[b];
+    } else {
+      let b = Math.floor(Math.random() * special.length);
+      password += special[b];
+    }
+  }
+  password = Shuffle(password);
   document.getElementById("password").value = password;
 };
 
@@ -51,7 +68,10 @@ const copyPassword = () => {
   passwordInput.select();
   document.execCommand("copy");
   const messageElement = document.getElementById("message");
-  messageElement.textContent = "Password copied to clipboard!";
+  messageElement.innerText = "Password has been copied to the clipboard!";
+  setTimeout(() => {
+    messageElement.innerText = "";
+  }, 2000);
 };
 
 document.getElementById("copy").addEventListener("click", copyPassword);
