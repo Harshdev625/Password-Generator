@@ -31,5 +31,12 @@ Once you have the Password Generator running, follow these steps to generate a p
 ![CSS](https://github.com/Harshdev625/Password-Generator/assets/98793412/a91ace2f-6eec-46b3-b05f-58008240556d)
 ![javascript](https://github.com/Harshdev625/Password-Generator/assets/98793412/c7e8b8e1-cd56-4e8e-8d7d-98a2f368c669)
 
+# Preview
+<img width="959" alt="Password Generator" src="https://github.com/Harshdev625/Password-Generator/assets/98793412/0e808da9-e5ac-4edf-80b0-a68a676468a2">
+
 # Contributing
 Contributions to the Password Generator are welcome! If you encounter any bugs or issues or have ideas for improvements, please open an issue on the repository. Pull requests with enhancements are also appreciated.
+
+<p align='center'>
+(If you liked the project, give it a star 😃)
+</p>
